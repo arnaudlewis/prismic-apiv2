@@ -1,13 +1,12 @@
 const Prismic = require('prismic.io');
+const PrismicDOM = require('prismic-dom');
 const request = require('request');
 const PrismicConfig = require('./prismic-configuration');
-const Onboarding = require('./onboarding');
 const app = require('./config');
 
 const PORT = app.get('port');
 
 app.listen(PORT, () => {
-  Onboarding.trigger();
   process.stdout.write(`Point your browser to: http://localhost:${PORT}\n`);
 });
 
@@ -18,6 +17,7 @@ app.use((req, res, next) => {
   Prismic.api(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.accessToken, req })
   .then((api) => {
     req.prismic = { api };
+    res.locals.DOM = PrismicDOM;
     res.locals.ctx = {
       endpoint: PrismicConfig.apiEndpoint,
       linkResolver: PrismicConfig.linkResolver,
@@ -29,9 +29,14 @@ app.use((req, res, next) => {
   });
 });
 
-/*
- * Route with documentation to build your project with prismic
- */
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('/page/:uid', (req, res) => {
+  const uid = req.params.uid;
+
+  req.prismic.api.getByUID('test', uid).then((content) => {
+    if (content) {
+      res.render('index', { doc: content, content: content.data });
+    } else {
+      res.status(404).send('404 not found');
+    }
+  });
 });

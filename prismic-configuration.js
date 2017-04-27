@@ -1,6 +1,6 @@
 module.exports = {
 
-  apiEndpoint: 'http://apiv2.wroom.dev/api',
+  apiEndpoint: 'http://prismic-apiv2.wroom.dev/api',
 
   // -- Access token if the Master is not open
   // accessToken: 'xxxxxx',
