@@ -1,4 +1,4 @@
-const Prismic = require('prismic.io');
+const Prismic = require('prismic.io').default;
 const PrismicDOM = require('prismic-dom');
 const request = require('request');
 const PrismicConfig = require('./prismic-configuration');
