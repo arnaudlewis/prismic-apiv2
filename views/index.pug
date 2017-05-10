@@ -1,43 +1,97 @@
 extends ./layout.pug
 
 block body
- div
-   img(src=content.image.url)
-   h1
-    !=content["key-text"]
-   p
-    !=DOM.StructuredText.asText(content["rich-text"], ctx.linkResolver)
-   
-   !=DOM.StructuredText.asHtml(content["rich-text"], ctx.linkResolver)
 
+  div.header
+    p
+      | Go to the Api Browser https://your-repo-name.prismic.io/v2/api to see your json response.
+      | You dont need to write any query to see all documents just click on search and display as JSON
 
-   h2 complex type with default value (should see nothing because linkURL is null)
+  div
+    .fragment-type Image
+    p
+      img(src=doc.data.image.url)
+    
+    .fragment-type Rich Text as text
+    p
+      !=DOM.RichText.asText(doc.data.richtext)
+    
+    .fragment-type Rich Text as html
+    !=DOM.RichText.asHtml(doc.data.richtext, ctx.linkResolver)
 
-   !=content.link.url
+    .fragment-type Date (convert as ISO JS Date)
+    != DOM.Date(doc.data.date)
 
-   h2 slices
+    .fragment-type Timestamp
+    p
+      != doc.data.timestamp
 
-   for slice in content.slicezone
-    case slice.sliceType
-      when 'singlefieldslice'
-        .single-field-slice
-          !=DOM.StructuredText.asHtml(slice.value)
-      
-      when 'simpleslice'
-        .simple-slice
-          for block in slice.value
-            .simple-slice-block
-              img(src=block.illu.url)
-              !=DOM.StructuredText.asHtml(block.title, ctx.linkResolver)
-              !=DOM.StructuredText.asHtml(block.description, ctx.linkResolver)
-      
-      when 'compositeslice'
-        .composite-slice
-          h2
-            != slice.primary.title
-          for item in slice.items
-            .feature
-              h3
-                !=item["feature-name"]
-              
-              !=DOM.StructuredText.asHtml(item["feature-description"], ctx.linkResolver)
+    .fragment-type Color
+    p
+      != doc.data.color
+
+    .fragment-type Number
+    p
+      != doc.data.number
+
+    .fragment-type Key Text
+    p
+      != doc.data.keytext
+
+    .fragment-type Embed
+    p
+      != doc.data.embed.embed_url
+
+    .fragment-type GeoPoint
+    p
+      != doc.data.geopoint.latitude
+    p
+      != doc.data.geopoint.longitude
+    
+    .fragment-type Link
+    p
+      != doc.data.link.url
+    
+    .fragment-type MediaLink
+    p
+      != doc.data.link.url
+
+    .fragment-type DocumentLink (getUrl)
+    p
+      != ctx.linkResolver(doc.data.documentlink)
+
+    .fragment-type Group
+    for blockGroup in doc.data.group
+      .group
+        img(src=blockGroup.illu.url)
+        !=DOM.RichText.asHtml(blockGroup.title)
+        !=DOM.RichText.asHtml(blockGroup.description)
+
+    .fragment-type slices
+    for slice in doc.data.slicezone
+      case slice.slice_type
+        when 'singlefieldslice'
+          .fragment-type Slice with Rich Text directly inside
+          .single-field-slice
+            !=DOM.RichText.asHtml(slice.value)
+        
+        when 'simpleslice'
+          .simple-slice
+            for block in slice.value
+              .fragment-type Slice with Group inside
+              .simple-slice-block
+                img(src=block.illu.url)
+                !=DOM.RichText.asHtml(block.title)
+                !=DOM.RichText.asHtml(block.description)
+        
+        when 'compositeslice'
+          .composite-slice
+            .fragment-type new type Slice with repeatable and non repeatable
+            h2
+              != slice.primary.title
+            for item in slice.items
+              .feature
+                h3
+                  !=item.featurename
+                
+                !=DOM.RichText.asHtml(item.featuredescription)

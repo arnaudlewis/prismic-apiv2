@@ -3,8 +3,8 @@ html {
 }
 
 body {
-    //-webkit-text-stroke-width: .05px;
-    //-webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: .05px;
+    -webkit-text-stroke-color: white;
     -webkit-font-smoothing: antialiased;
     font-family: Lato, sans-serif;
     font-size: 18px;
@@ -12,4 +12,10 @@ body {
     font-weight: 400;
     letter-spacing: 0.45;
     color: #516677;
+}
+
+.fragment-type {
+    font-size: 24px;
+    color: red;
+    font-weight: bold;
 }

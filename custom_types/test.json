@@ -7,7 +7,7 @@
           "placeholder" : "uid placeholder"
         }
       },
-      "rich-text" : {
+      "richtext" : {
         "type" : "StructuredText",
         "config" : {
           "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
@@ -57,7 +57,7 @@
           "placeholder" : "number placeholder"
         }
       },
-      "key-text" : {
+      "keytext" : {
         "type" : "Text",
         "config" : {
           "label" : "key text",
@@ -201,13 +201,13 @@
             "compositeslice": {
               "type": "Slice",
               "repeat": {
-                "feature-name": {
+                "featurename": {
                   "type": "Text",
                   "config": {
                     "label": "title"
                   }
                 },
-                "feature-description": {
+                "featuredescription": {
                   "type": "StructuredText",
                   "config": {
                     "placeholder": "desc"

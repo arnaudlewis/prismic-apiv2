@@ -1,5 +1,5 @@
-const Prismic = require('prismic.io').default;
-const PrismicDOM = require('prismic-dom');
+const Prismic = require('prismic-javascript').default;
+const PrismicDOM = require('prismic-dom').default;
 const request = require('request');
 const PrismicConfig = require('./prismic-configuration');
 const app = require('./config');
@@ -31,10 +31,9 @@ app.use((req, res, next) => {
 
 app.get('/page/:uid', (req, res) => {
   const uid = req.params.uid;
-
   req.prismic.api.getByUID('test', uid).then((content) => {
     if (content) {
-      res.render('index', { doc: content, content: content.data });
+      res.render('index', { doc: content });
     } else {
       res.status(404).send('404 not found');
     }
