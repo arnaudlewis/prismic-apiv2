@@ -29,6 +29,10 @@ app.use((req, res, next) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.redirect('/page/mydoc');
+});
+
 app.get('/page/:uid', (req, res) => {
   const uid = req.params.uid;
   req.prismic.api.getByUID('test', uid).then((content) => {
