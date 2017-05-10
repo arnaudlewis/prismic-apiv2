@@ -13,7 +13,7 @@ module.exports = {
   // This function will be used to generate links to Prismic.io documents
   // As your project grows, you should update this function according to your routes
   linkResolver(doc, ctx) {
-    if (doc.type === 'test') return `/test/${doc.uid}`;
+    if (doc.type === 'test') return `/page/${doc.uid}`;
     return '/';
   },
 };
