@@ -16,8 +16,8 @@
     "express": "~4.15.2",
     "method-override": "~2.3.7",
     "morgan": "~1.8.1",
-    "prismic-dom": "^1.1.0",
-    "prismic-javascript": "^1.0.0",
+    "prismic-dom": "^1.1.2",
+    "prismic-javascript": "^1.0.5",
     "pug": "~2.0.0-beta11",
     "request": "~2.81.0",
     "serve-favicon": "~2.4.1"

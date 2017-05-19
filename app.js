@@ -1,5 +1,5 @@
-const Prismic = require('prismic-javascript').default;
-const PrismicDOM = require('prismic-dom').default;
+const Prismic = require('prismic-javascript');
+const PrismicDOM = require('prismic-dom');
 const Cookies = require('cookies');
 const request = require('request');
 const PrismicConfig = require('./prismic-configuration');
@@ -15,7 +15,7 @@ app.listen(PORT, () => {
  * Initialize prismic context and api
  */
 app.use((req, res, next) => {
-  Prismic.api(PrismicConfig.apiEndpoint, { accessToken: PrismicConfig.accessToken, req })
+  Prismic.api(PrismicConfig.apiEndpoint)
   .then((api) => {
     req.prismic = { api };
     res.locals.DOM = PrismicDOM;
