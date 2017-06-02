@@ -1,225 +1,224 @@
 {
-    "Main" : {
-      "uid" : {
-        "type" : "UID",
-        "config" : {
-          "label" : "uid name",
-          "placeholder" : "uid placeholder"
-        }
-      },
-      "richtext" : {
-        "type" : "StructuredText",
-        "config" : {
-          "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
-          "label" : "rich text",
-          "placeholder" : "rich text placeholder"
-        }
-      },
-      "image" : {
-        "type" : "Image",
-        "config" : {
-          "constraint" : {
-            "width" : 200,
-            "height" : 300
-          },
-          "thumbnails" : [ {
-            "name" : "thumbnail",
-            "width" : 50,
-            "height" : 50
-          } ],
-          "label" : "image"
-        }
-      },
-      "date" : {
-        "type" : "Date",
-        "config" : {
-          "label" : "date",
-          "placeholder" : "date placeholder"
-        }
-      },
-      "timestamp" : {
-        "type" : "Timestamp",
-        "config" : {
-          "label" : "timestamp",
-          "placeholder" : "timestamp placeholder"
-        }
-      },
-      "color" : {
-        "type" : "Color",
-        "config" : {
-          "label" : "color"
-        }
-      },
-      "number" : {
-        "type" : "Number",
-        "config" : {
-          "label" : "number",
-          "placeholder" : "number placeholder"
-        }
-      },
-      "keytext" : {
-        "type" : "Text",
-        "config" : {
-          "label" : "key text",
-          "placeholder" : "key text placeholder"
-        }
-      },
-      "select" : {
-        "type" : "Select",
-        "config" : {
-          "options" : [ "first", "second", "third" ],
-          "label" : "select",
-          "placeholder" : "select placeholder"
-        }
-      },
-      "embed" : {
-        "type" : "Embed",
-        "config" : {
-          "label" : "embed",
-          "placeholder" : "embed placeholder"
-        }
-      },
-      "geopoint" : {
-        "type" : "GeoPoint",
-        "config" : {
-          "label" : "geopoint"
-        }
-      },
-      "link" : {
-        "type" : "Link",
-        "config" : {
-          "label" : "link",
-          "placeholder" : "link placeholder"
-        }
-      },
-      "documentlink" : {
-        "type" : "Link",
-        "fieldset" : "Link to a document",
-        "config" : {
-          "select" : "document",
-          "customtypes" : [ "type" ],
-          "tags" : [ "tag" ],
-          "placeholder" : "Link to a document"
-        }
-      },
-      "medialink" : {
-        "type" : "Link",
-        "fieldset" : "Link to a media library item",
-        "config" : {
-          "select" : "media",
-          "placeholder" : "Link to a media library item"
-        }
-      },
-      "group" : {
-        "type" : "Group",
-        "config" : {
-          "fields" : {
-            "title" : {
-              "type" : "StructuredText",
-              "config" : {
-                "multi" : "heading1, heading2, heading3",
-                "label" : "title",
-                "placeholder" : "title placeholder"
-              }
-            },
-            "illu" : {
-              "type" : "Image",
-              "config" : {
-                "constraint" : {
-                  "width" : 300,
-                  "height" : 300
-                },
-                "thumbnails" : [ {
-                  "name" : "thumbnail",
-                  "width" : 20,
-                  "height" : 20
-                } ],
-                "label" : "illu"
-              }
-            },
-            "description" : {
-              "type" : "StructuredText",
-              "config" : {
-                "multi" : "paragraph, strong, em",
-                "label" : "description",
-                "placeholder" : "description placeholder"
-              }
+  "Main" : {
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "uid name",
+        "placeholder" : "uid placeholder"
+      }
+    },
+    "richtext" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label" : "rich text",
+        "placeholder" : "rich text placeholder"
+      }
+    },
+    "image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : {
+          "width" : 200,
+          "height" : 300
+        },
+        "thumbnails" : [ {
+          "name" : "thumbnail",
+          "width" : 50,
+          "height" : 50
+        } ],
+        "label" : "image"
+      }
+    },
+    "date" : {
+      "type" : "Date",
+      "config" : {
+        "label" : "date",
+        "placeholder" : "date placeholder"
+      }
+    },
+    "timestamp" : {
+      "type" : "Timestamp",
+      "config" : {
+        "label" : "timestamp",
+        "placeholder" : "timestamp placeholder"
+      }
+    },
+    "color" : {
+      "type" : "Color",
+      "config" : {
+        "label" : "color"
+      }
+    },
+    "number" : {
+      "type" : "Number",
+      "config" : {
+        "label" : "number",
+        "placeholder" : "number placeholder"
+      }
+    },
+    "keytext" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "key text",
+        "placeholder" : "key text placeholder"
+      }
+    },
+    "select" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "first", "second", "third" ],
+        "label" : "select",
+        "placeholder" : "select placeholder"
+      }
+    },
+    "embed" : {
+      "type" : "Embed",
+      "config" : {
+        "label" : "embed",
+        "placeholder" : "embed placeholder"
+      }
+    },
+    "geopoint" : {
+      "type" : "GeoPoint",
+      "config" : {
+        "label" : "geopoint"
+      }
+    },
+    "link" : {
+      "type" : "Link",
+      "config" : {
+        "label" : "link",
+        "placeholder" : "link placeholder"
+      }
+    },
+    "documentlink" : {
+      "type" : "Link",
+      "fieldset" : "Link to a document",
+      "config" : {
+        "select" : "document",
+        "customtypes" : [ "type" ],
+        "tags" : [ "tag" ],
+        "placeholder" : "Link to a document"
+      }
+    },
+    "medialink" : {
+      "type" : "Link",
+      "fieldset" : "Link to a media library item",
+      "config" : {
+        "select" : "media",
+        "placeholder" : "Link to a media library item"
+      }
+    },
+    "group" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "heading1, heading2, heading3",
+              "label" : "title",
+              "placeholder" : "title placeholder"
             }
           },
-          "label" : "group"
-        }
-      },
-      "slicezone": {
-        "type": "Slices",
-        "config": {
-          "choices": {
-            "singlefieldslice": {
-              "type": "StructuredText",
-              "config": {
-                "placeholder": "Content"
-              }
-            },
-            "simpleslice" : {
-        "type" : "Group",
-        "config" : {
-          "fields" : {
-            "title" : {
-              "type" : "StructuredText",
-              "config" : {
-                "multi" : "heading1, heading2, heading3",
-                "label" : "title",
-                "placeholder" : "title placeholder"
-              }
-            },
-            "illu" : {
-              "type" : "Image",
-              "config" : {
-                "constraint" : {
-                  "width" : 300,
-                  "height" : 300
-                },
-                "thumbnails" : [ {
-                  "name" : "thumbnail",
-                  "width" : 20,
-                  "height" : 20
-                } ],
-                "label" : "illu"
-              }
-            },
-            "description" : {
-              "type" : "StructuredText",
-              "config" : {
-                "multi" : "paragraph, strong, em",
-                "label" : "description",
-                "placeholder" : "description placeholder"
-              }
+          "illu" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 300,
+                "height" : 300
+              },
+              "thumbnails" : [ {
+                "name" : "thumbnail",
+                "width" : 20,
+                "height" : 20
+              } ],
+              "label" : "illu"
             }
           },
-          "label" : "group"
-        }
-      },
-            "compositeslice": {
-              "type": "Slice",
-              "repeat": {
-                "featurename": {
-                  "type": "Text",
-                  "config": {
-                    "label": "title"
-                  }
-                },
-                "featuredescription": {
-                  "type": "StructuredText",
-                  "config": {
-                    "placeholder": "desc"
-                  }
+          "description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, strong, em",
+              "label" : "description",
+              "placeholder" : "description placeholder"
+            }
+          }
+        },
+        "label" : "group"
+      }
+    },
+    "slicezone": {
+      "type": "Slices",
+      "config": {
+        "choices": {
+          "singlefieldslice": {
+            "type": "StructuredText",
+            "config": {
+              "placeholder": "Content"
+            }
+          },
+          "simpleslice" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "title" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "heading1, heading2, heading3",
+              "label" : "title",
+              "placeholder" : "title placeholder"
+            }
+          },
+          "illu" : {
+            "type" : "Image",
+            "config" : {
+              "constraint" : {
+                "width" : 300,
+                "height" : 300
+              },
+              "thumbnails" : [ {
+                "name" : "thumbnail",
+                "width" : 20,
+                "height" : 20
+              } ],
+              "label" : "illu"
+            }
+          },
+          "description" : {
+            "type" : "StructuredText",
+            "config" : {
+              "multi" : "paragraph, strong, em",
+              "label" : "description",
+              "placeholder" : "description placeholder"
+            }
+          }
+        },
+        "label" : "group"
+      }
+    },
+          "compositeslice": {
+            "type": "Slice",
+            "repeat": {
+              "featurename": {
+                "type": "Text",
+                "config": {
+                  "label": "title"
                 }
               },
-              "non-repeat": {
-                "title": {
-                  "type": "Text",
-                  "config": {
-                    "label": "title"
-                  }
+              "featuredescription": {
+                "type": "StructuredText",
+                "config": {
+                  "placeholder": "desc"
+                }
+              }
+            },
+            "non-repeat": {
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "title"
                 }
               }
             }
@@ -228,3 +227,4 @@
       }
     }
   }
+}

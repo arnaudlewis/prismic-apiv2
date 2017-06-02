@@ -14,13 +14,13 @@ block body
     
     .fragment-type Rich Text as text
     p
-      !=DOM.RichText.asText(doc.data.richtext)
+      !=RichText.asText(doc.data.richtext)
     
     .fragment-type Rich Text as html
-    !=DOM.RichText.asHtml(doc.data.richtext, ctx.linkResolver)
+    !=RichText.asHtml(doc.data.richtext, ctx.linkResolver)
 
     .fragment-type Date (convert as ISO JS Date)
-    != DOM.Date(doc.data.date)
+    != Date(doc.data.date)
 
     .fragment-type Timestamp
     p
@@ -58,14 +58,14 @@ block body
 
     .fragment-type DocumentLink (getUrl)
     p
-      != ctx.linkResolver(doc.data.documentlink)
+      != Link.url(doc.data.documentlink, ctx.linkResolver)
 
     .fragment-type Group
     for blockGroup in doc.data.group
       .group
         img(src=blockGroup.illu.url)
-        !=DOM.RichText.asHtml(blockGroup.title)
-        !=DOM.RichText.asHtml(blockGroup.description)
+        !=RichText.asHtml(blockGroup.title)
+        !=RichText.asHtml(blockGroup.description)
 
     .fragment-type slices
     for slice in doc.data.slicezone
@@ -73,7 +73,7 @@ block body
         when 'singlefieldslice'
           .fragment-type Slice with Rich Text directly inside
           .single-field-slice
-            !=DOM.RichText.asHtml(slice.value)
+            !=RichText.asHtml(slice.value)
         
         when 'simpleslice'
           .simple-slice
@@ -81,8 +81,8 @@ block body
               .fragment-type Slice with Group inside
               .simple-slice-block
                 img(src=block.illu.url)
-                !=DOM.RichText.asHtml(block.title)
-                !=DOM.RichText.asHtml(block.description)
+                !=RichText.asHtml(block.title)
+                !=RichText.asHtml(block.description)
         
         when 'compositeslice'
           .composite-slice
@@ -94,4 +94,4 @@ block body
                 h3
                   !=item.featurename
                 
-                !=DOM.RichText.asHtml(item.featuredescription)
+                !=RichText.asHtml(item.featuredescription)
