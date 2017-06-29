@@ -15,7 +15,7 @@ app.listen(PORT, () => {
  * Initialize prismic context and api
  */
 app.use((req, res, next) => {
-  Prismic.api(PrismicConfig.apiEndpoint)
+  Prismic.getApi(PrismicConfig.apiEndpoint)
   .then((api) => {
     req.prismic = { api };
     res.locals.RichText = PrismicDOM.RichText;
